@@ -1,0 +1,31 @@
+<template name="threads">
+  <div id="threads-top">
+    <h2 class="center" id="threads-header">Threads</h2>
+    <form class="navbar-form navbar-statid-top same-line" id="threads-navbar" role="search">
+      <div class="form-group" id="threads-search">
+        <input type="text" class="form-control" placeholder="Search" id="search-input">
+      </div>
+    </form>
+    <button class="btn btn-default same-line" id="new-thread-button">New Thread</button>
+  </div>
+  <div id="threads">
+    <ul>
+    {{#each threads}}
+      <li class="threads-title-title" id="{{selectedClass}}" data-thread-id="{{this._id}}">{{title}}</li>
+    {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="newThread">
+  <div class="container-fluid" id="input-block">
+    <div class="row">
+      <form id="thread-form">
+        <div class="form-group">
+          <input class="form-control" id="inputTitle" placeholder="Title of new thread here">
+        </div>
+      </form>
+      <button class="btn btn-primary" type="submit" id="submitThread">Save Thread</button>
+    </div>
+  </div>
+</template>
