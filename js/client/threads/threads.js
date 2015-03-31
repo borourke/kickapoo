@@ -29,7 +29,7 @@ if(Meteor.isClient) {
   /////////////////////
   Template.threads.helpers({
     'threads': function() {
-      return Threads.find({author_id: Session.get('currentUser')._id});
+      return Threads.find();
     },
     'selectedClass': function() { 
       var threadId = this._id;

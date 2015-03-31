@@ -19,8 +19,7 @@ if(Meteor.isClient) {
   Template.messages.helpers({
     'messages': function() {
       return Messages.find({
-        thread_id: Session.get('selectedThread'),
-        author_id: Session.get('currentUser')._id
+        thread_id: Session.get('selectedThread')
       });
     }
   });  
