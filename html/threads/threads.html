@@ -10,9 +10,9 @@
   </div>
   <div id="threads">
     <ul>
-    {{#each threads}}
+      {{#each threads}}
       <li class="threads-title-title" id="{{selectedClass}}" data-thread-id="{{this._id}}">{{title}}</li>
-    {{/each}}
+      {{/each}}
     </ul>
   </div>
 </template>
@@ -24,6 +24,13 @@
         <div class="form-group">
           <input class="form-control" id="inputTitle" placeholder="Title of new thread here">
         </div>
+        {{#each groupUsers}}
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="thread-user-selectable" id="{{_id}}">{{email}}
+          </label>
+        </div>
+        {{/each}}
       </form>
       <button class="btn btn-primary" type="submit" id="submitThread">Save Thread</button>
     </div>

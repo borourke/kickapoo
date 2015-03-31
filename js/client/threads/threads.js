@@ -7,7 +7,11 @@ if(Meteor.isClient) {
     'click #submitThread': function(){
       var title = $('#inputTitle').val();
       var authorId = Session.get('currentUser')._id;
-      Meteor.saveThread(title, authorId);
+      var userIds = [];
+      $('input.thread-user-selectable:checked').each(function () {
+        userIds.push($(this).attr('id'));
+      });
+      Meteor.saveThread(title, authorId, userIds);
       Meteor.toggleNewThread();
     }
   });
@@ -29,7 +33,7 @@ if(Meteor.isClient) {
   /////////////////////
   Template.threads.helpers({
     'threads': function() {
-      return Threads.find();
+      return Threads.find({ 'user_ids': { $all: [Session.get('currentUser')._id] }})
     },
     'selectedClass': function() { 
       var threadId = this._id;
@@ -43,10 +47,11 @@ if(Meteor.isClient) {
   ////////////////////
   // Custom section //
   ////////////////////
-  Meteor.saveThread = function(title, authorId) {
+  Meteor.saveThread = function(title, authorId, userIds) {
     Threads.insert({
       title: title,
       author_id: authorId,
+      user_ids: userIds,
       timestamp: Date.now()
     }, function(){
       $('#inputTitle').val('');
