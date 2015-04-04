@@ -6,6 +6,7 @@ if(Meteor.isClient) {
     'submit #register-form' : function() {
       // Save New User
       var email = $("#register-form").find('#register-email').val();
+      var name = $("#register-form").find('#register-name').val();
       var addressOne = $("#register-form").find('#register-address-l1').val();
       var addressTwo = $("#register-form").find('#register-address-l2').val();
       var city = $("#register-form").find('#register-city').val();
@@ -24,7 +25,8 @@ if(Meteor.isClient) {
         zip,
         state,
         phone,
-        salt
+        salt,
+        name
       );
       // Login New User
       Meteor.loginUser(email, password);
@@ -36,9 +38,10 @@ if(Meteor.isClient) {
   ////////////////////
   // Custom section //
   ////////////////////
-  Meteor.registerUser = function(email, encryptedPassword, addressOne, addressTwo, city, zip, state, phone, salt) {
+  Meteor.registerUser = function(email, encryptedPassword, addressOne, addressTwo, city, zip, state, phone, salt, name) {
     Users.insert({
       email: email,
+      name: name,
       address_one: addressOne,
       address_two: addressTwo,
       city: city,
