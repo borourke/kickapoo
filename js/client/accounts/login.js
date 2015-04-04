@@ -27,6 +27,7 @@ if(Meteor.isClient) {
   ////////////////////
   // Custom section //
   ////////////////////
+  // Logs in a user
   Meteor.loginUser = function(email, password) {
     var user = Users.findOne({email: email});
     var salt = user.salt;
@@ -35,4 +36,17 @@ if(Meteor.isClient) {
     Session.set('currentUser', user);
     return (encryptedPassword == encryptedSubmittedPassword) ? true : false
   }
+
+  // Changes image for carraseoul affect
+  function changeImage() {
+    var length = $('.accounts-image').length;
+    var currentImage = parseInt($('.accounts-image-active').attr('id').split('-')[2]);
+    var newImage = ((currentImage+1) > length) ? 1 : currentImage + 1;
+    console.log(newImage);
+    $('.accounts-image-active').removeClass('accounts-image-active');
+    $('#accounts-image-'+newImage).addClass('accounts-image-active');
+  }
+
+  // Creates the carraseoul affect on the login/sign up page
+  Meteor.setInterval( changeImage, 5000 );
 };
