@@ -42,7 +42,6 @@ if(Meteor.isClient) {
     var length = $('.accounts-image').length;
     var currentImage = parseInt($('.accounts-image-active').attr('id').split('-')[2]);
     var newImage = ((currentImage+1) > length) ? 1 : currentImage + 1;
-    console.log(newImage);
     $('.accounts-image-active').removeClass('accounts-image-active');
     $('#accounts-image-'+newImage).addClass('accounts-image-active');
   }
