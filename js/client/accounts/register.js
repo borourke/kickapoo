@@ -6,10 +6,26 @@ if(Meteor.isClient) {
     'submit #register-form' : function() {
       // Save New User
       var email = $("#register-form").find('#register-email').val();
+      var addressOne = $("#register-form").find('#register-address-l1').val();
+      var addressTwo = $("#register-form").find('#register-address-l2').val();
+      var city = $("#register-form").find('#register-city').val();
+      var zip = $("#register-form").find('#register-zip').val();
+      var state = $("#register-form").find('#register-state').val();
+      var phone = $("#register-form").find('#register-phone').val();
       var password = $("#register-form").find('#register-password').val();
       var salt = Random.id(20);
       var encryptedPassword = CryptoJS.HmacMD5(salt, password).toString();
-      Meteor.registerUser(email, encryptedPassword, salt, password);
+      Meteor.registerUser(
+        email, 
+        encryptedPassword,
+        addressOne,
+        addressTwo,
+        city,
+        zip,
+        state,
+        phone,
+        salt
+      );
       // Login New User
       Meteor.loginUser(email, password);
       $('#accounts-page').hide();
@@ -20,12 +36,17 @@ if(Meteor.isClient) {
   ////////////////////
   // Custom section //
   ////////////////////
-  Meteor.registerUser = function(email, encryptedPassword, salt, password) {
+  Meteor.registerUser = function(email, encryptedPassword, addressOne, addressTwo, city, zip, state, phone, salt) {
     Users.insert({
       email: email,
+      address_one: addressOne,
+      address_two: addressTwo,
+      city: city,
+      zip: zip,
+      state: state,
+      phone: phone,
       encrypted_password: encryptedPassword,
       salt: salt,
-      password: password,
       created_at: Date.now(),
       updated_at: Date.now()
     })

@@ -15,8 +15,12 @@ if(Meteor.isClient) {
       }
     },
     'click #to-register-form': function() {
+      $('#register-email').val($("#login-form").find("#login-email").val());
+      $('#register-password').val($("#login-form").find("#login-password").val());
       $('#login-container').hide();
+      $('#login-title').hide();
       $('#register-container').show();
+      $('#register-title').show();
     }
   });
 

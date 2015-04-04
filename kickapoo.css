@@ -141,20 +141,20 @@ body {
   margin-bottom: 20px !important;
 }
 
-#login-email {
-  width: 74%;
-}
-
-#login-password {
-  width: 74%;
-}
-
-#login-email-label {
+.login-label {
   width: 24%;
 }
 
-#login-password-label {
+.login-input {
+  width: 74% !important;
+}
+
+.register-label {
   width: 24%;
+}
+
+.register-input {
+  width: 74% !important;
 }
 
 #login-title {
@@ -167,6 +167,9 @@ body {
 
 #register-container {
   display: none;
+  position: relative;
+  padding: 0px;
+  top: 5%;
 }
 
 #login-button {
@@ -175,5 +178,17 @@ body {
 }
 
 #to-register-form {
+  width: 100%;
+}
+
+#register-title {
+  display: none;
+  top: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#register-button {
   width: 100%;
 }

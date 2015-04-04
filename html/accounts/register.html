@@ -1,15 +1,40 @@
 <template name="register">
+  <h2 id="register-title"><u>Kickapoo</u></h2>
   <div class="container-fluid full-page" id="register-container">
-    <form id="register-form">
-      <div class="form-group">
-        <label for="register-email">Email address</label>
-        <input type="email" class="form-control" id="register-email" placeholder="Enter email">
+    <form class="form-inline" id="register-form">
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-email">Email</label>
+        <input type="email" class="form-control register-input" id="register-email" placeholder="Enter email">
       </div>
-      <div class="form-group">
-        <label for="register-passowrd">Password</label>
-        <input type="password" class="form-control" id="register-password" placeholder="Password">
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-passowrd">Password</label>
+        <input type="password" class="form-control register-input" id="register-password" placeholder="Password">
       </div>
-      <button type="submit" class="btn btn-default">Register New Account</button>
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-address-l1">Address</label>
+        <input class="form-control register-input" id="register-address-l1" placeholder="1234 Example St.">
+      </div>
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-address-l2">Apartment</label>
+        <input class="form-control register-input" id="register-address-l2" placeholder="Apt. C511">
+      </div>
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-city">City</label>
+        <input class="form-control register-input" id="register-city" placeholder="Oakland">
+      </div>
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-state">State</label>
+        <input class="form-control register-input" id="register-state" placeholder="CA">
+      </div>
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-zip">Zip Code</label>
+        <input class="form-control register-input" id="register-zip" placeholder="12345">
+      </div>
+      <div class="form-group accounts-form-group">
+        <label class="register-label" for="register-phone">Phone Number</label>
+        <input class="form-control register-input" id="register-phone" placeholder="(661) 312-3063">
+      </div>
+      <button type="submit" id="register-button" class="btn btn-primary">Register New Account</button>
     </form>
   </div>
 </template>

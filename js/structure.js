@@ -24,8 +24,8 @@ Threads = new Meteor.Collection("Threads");
 // Users {
 //  _id: string,
 //  email: string,
-//  address1: string,
-//  address2: string,
+//  address_one: string,
+//  address_two: string,
 //  city: string,
 //  state: string,
 //  zip: string,
