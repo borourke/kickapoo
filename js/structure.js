@@ -1,5 +1,5 @@
 // The following outlined data structures are ideal and not enforced 
-// on the DB or the app level.  It is meant to simulate a SQL structure
+// on the DB or the app level.  It is meant to simulate a Postgres SQL structure
 // and uses the same terminology as a result
 
 // Messages {
@@ -15,7 +15,8 @@ Messages = new Meteor.Collection("Messages");
 //  _id: string,
 //  title: string,
 //  author_id: string (TBD*********************************************),
-//  users: array,
+//  users: array (of strings),
+//  group_id: string,
 //  timestamp: integer (epoc time)
 // }
 Threads = new Meteor.Collection("Threads");
@@ -31,6 +32,17 @@ Threads = new Meteor.Collection("Threads");
 //  phone: string,
 //  birthday: integer (epoc time),
 //  encrypted_password: string (md5 of salt + password),
-//  auth_key: string
+//  salt: string,
+//  groups: array (of strings)
+//  timestamp: integer (epoc time)
 // }
 Users = new Meteor.Collection("Users");
+
+// Groups {
+//  _id: string,
+//  name: string,
+//  members: array (of strings),
+//  type: string ('family' or 'friends'),
+//  timestamp: integer (epoc time)
+// }
+Groups = new Meteor.Collection("Groups");

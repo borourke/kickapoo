@@ -6,8 +6,13 @@
   width: 100%;
 }
 
+html {
+  height: 100%;
+}
+
 body {
-  overflow: hidden;
+  min-height: 100%;
+  overflow-x: hidden;
 }
 
 .center {
@@ -18,10 +23,6 @@ body {
 
 .same-line {
   display: inline;
-}
-
-.form-control {
-  width: 955px;
 }
 
 .full-page {
@@ -98,3 +99,81 @@ body {
 
 /* Accounts */
 
+#accounts-page {
+  height:100vh;
+  overflow-y: hidden;
+}
+
+#accounts-page-row {
+  height: 100%;
+  min-height: 100%;
+}
+
+#accounts-left-col {
+  height: 100%;
+  min-height: 100%;
+  border: 2px solid black;
+  background-image: url("http://realestatecrm.biz/wp-content/uploads/2015/01/light-wood-grain-texture.jpg");
+}
+
+#accounts-right-col {
+  height: 100%;
+  min-height: 100%;
+  padding: 0px;
+  overflow-x: hidden;
+  border: 2px solid black;
+}
+
+#accounts-image {
+  height: 100%;
+  min-width: 100%;
+}
+
+#login-container {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+  padding: 0px;
+}
+
+.accounts-form-group {
+  min-width: 100%;
+  margin-bottom: 20px !important;
+}
+
+#login-email {
+  width: 74%;
+}
+
+#login-password {
+  width: 74%;
+}
+
+#login-email-label {
+  width: 24%;
+}
+
+#login-password-label {
+  width: 24%;
+}
+
+#login-title {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  top: 12%;
+  position: relative;
+}
+
+#register-container {
+  display: none;
+}
+
+#login-button {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#to-register-form {
+  width: 100%;
+}

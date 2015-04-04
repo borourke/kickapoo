@@ -3,13 +3,11 @@
 </head>
 
 <body>
-  {{> navbar}}
   {{#if currentUser}}
+    {{> navbar}}
     {{> threadsBody}}
-    {{> accountsBody}}
-  {{else}}
-    {{> accountsBody}}
   {{/if}}
+  {{> accountsBody}}
 </body>
 
 <template name="threadsBody">
@@ -31,9 +29,14 @@
 
 <template name="accountsBody">
   <div class="container-fluid" id="accounts-page">
-    <div class="row">
-      {{> login}}
-      {{> register}}
+    <div class="row" id="accounts-page-row">
+      <div class="col-md-3" id="accounts-left-col">
+        {{> login}}
+        {{> register}}
+      </div>
+      <div class="col-md-9" id="accounts-right-col">
+        <img id="accounts-image" src="https://scontent-sjc.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10255212_10203104354664118_1808443496527119114_n.jpg?oh=25a628b0fba2d96eef15a2d872e3b653&oe=55AAF483" />
+      </div>
     </div>
   </div>
 </template>
