@@ -4,7 +4,6 @@
 
 <body>
   {{#if currentUser}}
-    {{> navbar}}
     {{> threadsBody}}
   {{/if}}
   {{> accountsBody}}
@@ -12,17 +11,17 @@
 
 <template name="threadsBody">
   <div class="containter-fluid" id="threads-page">
-    <div class="row">
-      <div class="col-md-3 defined-border full-page" id="threads-area">
+    <div class="row" id="threads-and-messages">
+      {{> navbar}}
+      <div class="col-md-3" id="threads-area">
         {{> threads}}
       </div>
-      <div class="col-md-9 defined-border full-page" id="message-area">
+      <div class="col-md-9" id="messages-area">
         {{> messages}}
-        {{> newMessage}}
       </div>
-      <div class="defined-border" id="new-thread">
-        {{> newThread}}
-      </div>
+    </div>
+    <div class="row" id="new-thread">
+      {{> newThread}}
     </div>
   </div>
 </template>
@@ -35,14 +34,7 @@
         {{> register}}
       </div>
       <div class="col-md-9" id="accounts-right-col">
-          <img class="accounts-image accounts-image-active" id="accounts-image-1" src="http://i.imgur.com/gAJ2gY7.png" />
-          <img class="accounts-image" id="accounts-image-2" src="http://i.imgur.com/ekDAtdv.png" />
-          <img class="accounts-image" id="accounts-image-3" src="http://i.imgur.com/EOJSRWq.png" />
-          <img class="accounts-image" id="accounts-image-4" src="http://i.imgur.com/2z4ypKn.jpg" />
-          <img class="accounts-image" id="accounts-image-5" src="http://i.imgur.com/ale8Ogs.png" />
-          <img class="accounts-image" id="accounts-image-6" src="http://i.imgur.com/u22RnHG.png" />
-          <img class="accounts-image" id="accounts-image-7" src="http://i.imgur.com/wz9Td5l.jpg" />
-          <img class="accounts-image" id="accounts-image-8" src="http://i.imgur.com/KlMtbGJ.png" />
+        {{> accountsImages}}
       </div>
     </div>
   </div>
@@ -50,18 +42,22 @@
 
 <template name="navbar">
   <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
-    <div class="container" id="navbar-container">
-      {{#if currentUser}}
-        <ul class="nav navbar-nav navbar-left">
-          <li><button class="btn btn-primary" id="threads-button">Threads</button></li>
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="navtab active"><a>Threads</a></li>
+      <li role="presentation" class="navtab"><a>Profile</a></li>
+      <li role="presentation" class="navtab"><a>Messages</a></li>
+      <li role="presentation" class="dropdown" id="my-account">
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+          My Account <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a>My Profile</a></li>
+          <li><a>Settings</a></li>
+          <li class="divider"></li>
+          <li><a id="logout-button">Logout</a></li>
         </ul>
-      {{/if}}
-      <ul class="nav navbar-nav navbar-right">
-        <li><button class="btn btn-primary" id="login-button">Login</button></li>
-        <li><button class="btn btn-success" id="register-button">Register</button></li>
-        <li><button class="btn btn-danger" id="logout-button">Logout</button></li>
-      </ul>
-    </div>
+      </li>
+    </ul>
   </nav>
 </template>
 

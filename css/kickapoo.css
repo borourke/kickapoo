@@ -1,0 +1,57 @@
+/* Shared */
+#navbar-container {
+  margin: 0px;
+  width: 100%;
+}
+
+#my-account {
+  float: right;
+  height: 52px;
+}
+
+#my-account:hover {
+  background-color: white !important;
+}
+
+.dropdown-menu {
+  cursor: pointer;
+}
+
+.navbar-fixed-top {
+  background-image: url("http://realestatecrm.biz/wp-content/uploads/2015/01/light-wood-grain-texture.jpg");
+}
+
+.nav-tabs {
+  border: none;
+  margin-left: 10px;
+}
+
+.nav-tabs > li {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-radius: 4px 4px 0 0;
+}
+
+.nav-tabs > li > a {
+  height: 51px;
+  margin: 0 0 0 0;
+  color: black;
+  padding-top: 14px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  overflow: hidden;
+  max-width: 100%;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

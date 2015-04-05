@@ -1,21 +1,22 @@
 <template name="messages">
-  <h2 class="center">Messages</h2>
   <div id="messages">
+    <h2 class="center">Messages</h2>
     <ul>
       {{#each messages}}
       <li class="messages-message">{{message}}</li>
       {{/each}}
     </ul>
+    {{> newMessage}}
   </div>
 </template>
 
 <template name="newMessage">
-  <div class="container-fluid" id="input-block">
+  <div class="container-fluid" id="messages-input-block">
     <div class="row">
-      <form id="message-form">
-        <div class="form-group">
-          <input class="form-control same-line" id="inputMessage" placeholder="Type message here...">
-          <button class="btn btn-primary same-line" type="submit" id="submitMessage">Message</button>
+      <form class="form-inline" id="message-form">
+        <div class="form-group form-group-messages">
+          <input class="form-control same-line" id="input-message" placeholder="Type message here...">
+          <button class="btn btn-primary same-line" type="submit" id="submit-message">Message</button>
         </div>
       </form>
     </div>

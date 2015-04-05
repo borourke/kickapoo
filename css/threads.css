@@ -1,0 +1,52 @@
+/* Threads */
+
+#threads-page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#threads-area {
+  margin-top: 50px;
+  height: 100vh;
+  border: 2px solid black;
+}
+
+#selected-thread {
+  background-color: yellow;
+}
+
+#new-thread {
+  display: none;
+}
+
+/* Messages */
+
+#messages {
+  margin-top: 50px;
+  height: 100vh;
+  border: 2px solid black;
+}
+
+#messages-area {
+  padding: 0px;
+}
+
+#messages-input-block {
+  bottom: 50px;
+  position: absolute;
+  width: 100%;
+}
+
+.form-group-messages {
+  width: 100%;
+}
+
+#input-message {
+  width: 90%;
+  margin-right: -3px;
+}
+
+#submit-message {
+  width: 9%;
+  margin-right: -3px;
+}
