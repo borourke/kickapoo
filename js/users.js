@@ -22,12 +22,12 @@ if(Meteor.isClient) {
       $('#login-container').hide();
       $('#login-title').hide();
       $('#register-container').show();
-      $('#register-title').show();
+      $('.register-title').show();
     }
   });
 
   Template.register.events({
-    'submit #register-form' : function() {
+    'submit #register-form': function() {
       // Save New User
       var email = $("#register-form").find('#register-email').val();
       var name = $("#register-form").find('#register-name').val();
@@ -56,6 +56,12 @@ if(Meteor.isClient) {
       Meteor.loginUser(email, password);
       $('#accounts-page').hide();
       return false;
+    },
+    'click #back-arrow': function() {
+      $('#login-container').show();
+      $('#login-title').show();
+      $('#register-container').hide();
+      $('.register-title').hide();
     }
   });
 
