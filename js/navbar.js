@@ -15,12 +15,10 @@ if(Meteor.isClient) {
       $('#login-container').hide();
       $('#register-container').show();
     },
-    'click #threads-button': function() {
-      $('#accounts-page').hide();
-      $('#threads-page').show();
-    },
     'click #logout-button': function() {
       Session.set('currentUser', false);
+      $('#accounts-page').show();
+      $('#threads-page').hide();
     }
   });
 }
